@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class APIClient {
     
-    static let address: String = "https://invotracker.com/api/?api"
+    static let address: String = "webaddress"
     static let invoiceDateFormatter = DateFormatter()
     class func generateRequest(url: URL, poststring: String) -> URLRequest {
         var request = URLRequest(url: url)
@@ -24,7 +24,7 @@ class APIClient {
     
     enum Login {
         static func login(username: String, password: String, deviceId: String, completion: @escaping (_ error: Error?, _ data: JSON?) -> Void) {
-            guard let urlString = URL(string: "https://invotracker.com/api/?appLogin") else { return }
+            guard let urlString = URL(string: "loginAddress") else { return }
             let poststring = "username=\(username)&password=\(password)&deviceId=\(deviceId)"
             let request = generateRequest(url: urlString, poststring: poststring)
             
